@@ -1,10 +1,10 @@
 import React from 'react';
 
-import baseImage from '../react_and_rohkost_assets/images/fruity_heart.jpg';
+import baseImage from '../react_and_rohkost_assets/icons/png/watermelon.png';
 
 import Box from '../Box';
 
-const BOX_SIZE = 512/16;
+const PIXEL_PER_BOX_SIDE = Math.floor(10);
 
 class ImageGritter extends React.Component {
 	constructor() {
@@ -27,10 +27,10 @@ class ImageGritter extends React.Component {
 		const canvas = this.refs.canvas;
 		const ctx = canvas.getContext('2d');
 		const imageDatas = [];
-		for (let y = 0; y <= canvas.height - BOX_SIZE; y += BOX_SIZE ) {
+		for (let y = 0; y <= canvas.height - PIXEL_PER_BOX_SIDE; y += PIXEL_PER_BOX_SIDE ) {
 			const row = [];
-			for (let x = 0; x <= canvas.width - BOX_SIZE; x += BOX_SIZE ) {
-				const imageData = ctx.getImageData(x,y,BOX_SIZE,BOX_SIZE);
+			for (let x = 0; x <= canvas.width - PIXEL_PER_BOX_SIDE; x += PIXEL_PER_BOX_SIDE ) {
+				const imageData = ctx.getImageData(x,y,PIXEL_PER_BOX_SIDE,PIXEL_PER_BOX_SIDE);
 				row.push(imageData);
 			}
 			imageDatas.push(row);
@@ -48,7 +48,7 @@ class ImageGritter extends React.Component {
 
 	renderRow(row) {
 		return row.map((box, y) => {
-			return <Box key={y} data={box}/>
+			return <Box key={y} data={box} mySize={PIXEL_PER_BOX_SIDE}/>
 		})
 	}
 
@@ -68,8 +68,7 @@ class ImageGritter extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.renderBoxes()}
-				{this.renderPlaceholder()}
+				{(this.state.boxImageDatas.length > 0) ? this.renderBoxes() : this.renderPlaceholder()}
 			</ div>
 		)
 	}
