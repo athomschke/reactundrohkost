@@ -68,15 +68,18 @@ class ImageGritter extends React.Component {
 		const ctx = canvas.getContext('2d');
 		ctx.drawImage(baseImageElement, 0, 0);
 		const imageDatas = [];
-		for (let i = 0; i <= canvas.width - BOX_WIDTH; i += BOX_WIDTH ) {
+		for (let i = 0; i <= canvas.height - BOX_WIDTH; i += BOX_WIDTH ) {
+			const line = document.createElement('div');
 			for (let j = 0; j <= canvas.width - BOX_WIDTH; j += BOX_WIDTH ) {
-				const imageData = ctx.getImageData(i,j,512,512);
+				const imageData = ctx.getImageData(j,i,512,512);
 				const iconName = ImageMapper(imageData);
 				let boxImageElement = document.createElement('img');
 				boxImageElement.src=imageUrlForName(iconName);
-				document.getElementsByClassName('App')[0].appendChild(boxImageElement);
+				line.appendChild(boxImageElement);
 			}
+			document.getElementsByClassName('App')[0].appendChild(line)
 		}
+		this.refs.canvas.parentElement.removeChild(this.refs.canvas);
 	}
 
 	render() {
