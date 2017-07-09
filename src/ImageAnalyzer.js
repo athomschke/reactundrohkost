@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 
 export default function ImageMapper(pixelData){
 
@@ -7,18 +6,18 @@ export default function ImageMapper(pixelData){
     let blockSize = 5;
     let i = 0;
     let count = 0;
-    while ( (i += blockSize * 4) < length ) {
+    while ( i < length ) {
         ++count;
         rgb.r += pixelData.data[i];
         rgb.g += pixelData.data[i+1];
         rgb.b += pixelData.data[i+2];
+        i += blockSize * 4
     }
 
     // ~~ used to floor values
     rgb.r = ~~(rgb.r/count);
     rgb.g = ~~(rgb.g/count);
     rgb.b = ~~(rgb.b/count);
-
 
     return rgb;
 }
