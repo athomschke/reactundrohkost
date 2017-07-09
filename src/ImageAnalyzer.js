@@ -1,4 +1,7 @@
 
+import imageMap from './imageMap';
+import * as _ from "lodash";
+
 export default function ImageMapper(pixelData){
 
     let length = pixelData.data.length;
@@ -19,5 +22,25 @@ export default function ImageMapper(pixelData){
     rgb.g = ~~(rgb.g/count);
     rgb.b = ~~(rgb.b/count);
 
-    return rgb;
+    return getImageForRGB(rgb.r, rgb.g, rgb.b);
+}
+
+export function getImageForRGB(r,g,b){
+    let distances = {};
+    let minDistance;
+    let minDistanceName;
+
+    _.each(imageMap, (imageRgb, imageName)=>{
+        let rDistance = Math.abs(imageRgb.r - r);
+        let gDistance = Math.abs(imageRgb.g - g);
+        let bDistance = Math.abs(imageRgb.b - b);
+        let avgDistance = (rDistance+gDistance+ bDistance)/3;
+        distances[imageName] = avgDistance;
+        if(!minDistance || minDistance > avgDistance){
+            minDistance = avgDistance;
+            minDistanceName = imageName;
+        }
+    });
+    return minDistanceName
+    
 }
