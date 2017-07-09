@@ -7,3 +7,7 @@
 .Box {
 	display: inline-block;
 }
+
+.Row {
+	height: 10px;
+}

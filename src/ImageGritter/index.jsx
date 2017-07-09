@@ -1,6 +1,6 @@
 import React from 'react';
 
-import baseImage from '../react_and_rohkost_assets/icons/png/watermelon.png';
+import baseImage from '../react_and_rohkost_assets/icons/png/chili.png';
 
 import Box from '../Box';
 
@@ -54,7 +54,7 @@ class ImageGritter extends React.Component {
 
 	renderBoxes() {
 		return this.state.boxImageDatas.map((row, x) => {
-			return (<div key={x}>{this.renderRow(row)}</div>)
+			return (<div className='Row' key={x}>{this.renderRow(row)}</div>)
 		})
 	}
 
