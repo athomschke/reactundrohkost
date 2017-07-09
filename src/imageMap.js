@@ -3,6 +3,7 @@ module.exports = {
     aubergine: {r: 84, g: 179, b: 4},
     avocado: {r: 77, g: 144, b: 33},
     banana: {r: 252, g: 180, b: 4},
+    blueberry: {r: 16, g:80, b: 162},
     beetroot: {r: 113, g: 60, b: 115},
     "bell-pepper-1": {r: 84, g: 179, b: 4},
     "bell-pepper":{r: 84, g: 180, b: 12},
@@ -24,5 +25,5 @@ module.exports = {
     pumpkin: {r: 251, g: 148, b: 4},
     // strawberry:  {r: 4, g: 131, b: 28},
     // tomato: {r: 4, g: 131, b: 28},
-    watermelon: {r: 251, g: 76, b:68}
+    watermelon: {r: 251, g: 76, b:68},
 }

@@ -29,7 +29,7 @@ import pumpkin from '../react_and_rohkost_assets/icons/svg/pumpkin.svg';
 import strawberry from '../react_and_rohkost_assets/icons/svg/strawberry.svg';
 import tomato from '../react_and_rohkost_assets/icons/svg/tomato.svg';
 import watermelon from '../react_and_rohkost_assets/icons/svg/watermelon.svg';
-
+import blueberry from '../react_and_rohkost_assets/icons/png/blueberry.png';
 import ImageMapper from '../ImageAnalyzer';
 
 const imageUrlForName = (name) => {
@@ -37,6 +37,7 @@ const imageUrlForName = (name) => {
 		case 'apple': return apple;
 		case 'aubergine': return aubergine;
 		case 'avocado': return avocado;
+		case 'blueberry': return blueberry;
 		case 'banana': return banana;
 		case 'beetroot': return beetroot;
 		case 'bell-pepper-1': return bellPepper1;
