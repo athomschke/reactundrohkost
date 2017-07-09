@@ -9,7 +9,7 @@ class ImageSelector extends Component {
 	render() {
 		return (
 			<div>
-                <input className="ImageUrlInput" value={this.state.imgURLInput} onChange={(val)=>{
+                <input className="ImageUrlInput" placeholder="Enter an image URL" value={this.state.imgURLInput} onChange={(val)=>{
                     this.setState({imgURLInput: val.target.value});
                 }}/>
                 <button className="RohkostifyButton" onClick={()=>{

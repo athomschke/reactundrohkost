@@ -1,5 +1,5 @@
 html {
-	background-color: rgb(30,30,30);
+	background-color: #131E29;
 }
 
 .BaseImage {
@@ -25,10 +25,13 @@ html {
 
 .ImageUrlInput {
     font-size: 20px;
-    height: 30px;
+    height: 34px;
     width: 50%;
     border-radius: 4px;
-    color: rgb(30,30,30);
+    color: #131E29;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #131E29;
 }
 
 .RohkostifyButton {
@@ -38,9 +41,10 @@ html {
     border-radius: 4px;
     background: none;
     border-style: solid;
-    background-color: white;
-    border-width: 0px;
-    color: rgb(30,30,30);
+    background-color: #FF6B00;
+    border-width: 2px;
+    color: #131E29;
+    border-color: #131E29;
 }
 
 .ImageGritter {
