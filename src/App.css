@@ -1,3 +1,7 @@
+html {
+	background-color: rgb(30,30,30);
+}
+
 .BaseImage {
   top: 0;
   bottom: 0;
@@ -12,6 +16,7 @@
 
     text-align: center;
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .Row {
@@ -23,16 +28,19 @@
     height: 30px;
     width: 50%;
     border-radius: 4px;
-    color: gray;
+    color: rgb(30,30,30);
 }
 
 .RohkostifyButton {
-    height: 30px;
+    height: 40px;
     font-size: 20px;
     margin-left: 10px;
     border-radius: 4px;
     background: none;
     border-style: solid;
+    background-color: white;
+    border-width: 0px;
+    color: rgb(30,30,30);
 }
 
 .ImageGritter {
