@@ -8,6 +8,7 @@ import apple from './react_and_rohkost_assets/icons/png/apple.png';
 
 class App extends Component {
 	render() {
+		const a = baseImage;
 		return (
 			<div className="App">
 				<ImageGritter />
