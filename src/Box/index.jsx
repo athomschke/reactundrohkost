@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactSVG from 'react-svg'
 
+import { boxSize } from '../constants';
+
 import apple from '../react_and_rohkost_assets/icons/svg/apple.svg';
 import aubergine from '../react_and_rohkost_assets/icons/svg/aubergine.svg';
 import avocado from '../react_and_rohkost_assets/icons/svg/avocado.svg';
@@ -64,14 +66,6 @@ export default class Box extends React.Component {
 		if (imageData === '') return <div />;
 
 		const iconName = ImageMapper(imageData);
-		return <div
-			className="Box"
-		>
-			<ReactSVG
-				path={imageUrlForName(iconName)}
-				className="example"
-				style={{ width: 50, height: 50 }}
-			/>
-		</ div>
+		return <img src={imageUrlForName(iconName)} width={`${boxSize}px`} height={`${boxSize}px`}/>
 	}
 }

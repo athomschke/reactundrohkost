@@ -1,10 +1,11 @@
 import React from 'react';
 
-import baseImage from '../react_and_rohkost_assets/icons/png/chili.png';
+import baseImage from '../react_and_rohkost_assets/images/nexenio_board.jpg';
 
 import Box from '../Box';
 
-const PIXEL_PER_BOX_SIDE = Math.floor(10);
+import { boxSize } from '../constants';
+const PIXEL_PER_BOX_SIDE = Math.floor(boxSize);
 
 class ImageGritter extends React.Component {
 	constructor() {
