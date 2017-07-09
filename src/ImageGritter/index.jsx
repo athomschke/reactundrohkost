@@ -13,6 +13,12 @@ class ImageGritter extends React.Component {
 		}
 	}
 
+	componentWillReceiveProps() {
+		this.setState({
+			boxImageDatas: []
+		})
+	}
+
 	initCanvas() {
 		const baseImageElement = this.refs.baseImage;
 		const canvas = this.refs.canvas;
