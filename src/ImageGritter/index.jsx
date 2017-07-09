@@ -4,7 +4,7 @@ import baseImage from '../react_and_rohkost_assets/images/vegetables2.jpg';
 
 import Box from '../Box';
 
-const BOX_WIDTH = 512;
+const BOX_SIZE = 512/4;
 
 class ImageGritter extends React.Component {
 	constructor() {
@@ -27,9 +27,9 @@ class ImageGritter extends React.Component {
 		const canvas = this.refs.canvas;
 		const ctx = canvas.getContext('2d');
 		const imageDatas = [];
-		for (let x = 0; x <= canvas.height - BOX_WIDTH; x += BOX_WIDTH ) {
+		for (let x = 0; x <= canvas.height - BOX_SIZE; x += BOX_SIZE ) {
 			const row = [];
-			for (let y = 0; y <= canvas.width - BOX_WIDTH; y += BOX_WIDTH ) {
+			for (let y = 0; y <= canvas.width - BOX_SIZE; y += BOX_SIZE ) {
 				const imageData = ctx.getImageData(y,x,512,512);
 				row.push(imageData);
 			}
@@ -63,7 +63,7 @@ class ImageGritter extends React.Component {
 			<div>
 				<canvas ref='canvas' className="baseCanvas" />
 				<img ref="baseImage" src={baseImage} className='BaseImage' alt="vegetables2" onLoad={this.onImageLoad.bind(this)}/>
-				{this.renderBoxes()}
+				<div>{this.renderBoxes()}</div>
 			</ div>
 		)
 	}
