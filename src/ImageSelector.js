@@ -9,12 +9,12 @@ class ImageSelector extends Component {
 	render() {
 		return (
 			<div>
-                <input value={this.state.imgURLInput} onChange={(val)=>{
+                <input className="ImageUrlInput" value={this.state.imgURLInput} onChange={(val)=>{
                     this.setState({imgURLInput: val.target.value});
                 }}/>
-                <button  onClick={()=>{
+                <button className="RohkostifyButton" onClick={()=>{
                     this.props.onSubmitUrl(this.state.imgURLInput)
-                    }} >{"Load image"}</button>
+                    }} >Rohkostify!</button>
 			</ div>
 		);
 	}

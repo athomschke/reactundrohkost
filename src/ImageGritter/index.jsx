@@ -74,7 +74,7 @@ class ImageGritter extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="ImageGritter" >
 				{(this.state.boxImageDatas.length > 0) ? this.renderBoxes() : this.renderPlaceholder(this.props.imgURL)}
 			</ div>
 		)

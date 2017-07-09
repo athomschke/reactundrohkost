@@ -8,6 +8,33 @@
 	display: inline-block;
 }
 
+.App {
+
+    text-align: center;
+    margin-top: 10%;
+}
+
 .Row {
 	height: 10px;
+}
+
+.ImageUrlInput {
+    font-size: 20px;
+    height: 30px;
+    width: 50%;
+    border-radius: 4px;
+    color: gray;
+}
+
+.RohkostifyButton {
+    height: 30px;
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background: none;
+    border-style: solid;
+}
+
+.ImageGritter {
+	margin-top: 20px;
 }
