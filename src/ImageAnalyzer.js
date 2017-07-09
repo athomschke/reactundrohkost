@@ -41,10 +41,10 @@ export function getImageForRGB(r,g,b){
     let minDistanceName;
 
     _.each(imageMap, (imageRgb, imageName)=>{
-        // let rDistance = Math.abs(imageRgb.r - r);
-        // let gDistance = Math.abs(imageRgb.g - g);
-        // let bDistance = Math.abs(imageRgb.b - b);
-         let distance = Math.sqrt((Math.abs(imageRgb.r-r))^2 + (Math.abs(imageRgb.g-g))^2 + (Math.abs(imageRgb.b-b))^2)
+        let rDistance = Math.pow(Math.abs(imageRgb.r - r), 2);
+        let gDistance = Math.pow(Math.abs(imageRgb.g - g), 2);
+        let bDistance = Math.pow(Math.abs(imageRgb.b - b),2);
+         let distance = Math.sqrt( rDistance+gDistance+bDistance)
         // let average = (r + g + b) / 3 
         // let distance = (imageRgb.r - average) + (imageRgb.g - average) + (imageRgb.b - average) 
         

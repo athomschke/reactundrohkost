@@ -1,7 +1,5 @@
 import React from 'react';
 
-import baseImage from '../react_and_rohkost_assets/images/nexenio_board.jpg';
-
 import Box from '../Box';
 
 import { boxSize } from '../constants';
