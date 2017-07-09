@@ -58,17 +58,19 @@ class ImageGritter extends React.Component {
 		})
 	}
 
-	renderPlaceholder() {
-		return (<div>
-			<canvas ref='canvas' className="baseCanvas" />
-			<img ref="baseImage" src={baseImage} className='BaseImage' alt="vegetables2" onLoad={this.onImageLoad.bind(this)}/>
-		</div>)
+	renderPlaceholder(url) {
+		if(url){
+			return (<div>
+				<canvas ref='canvas' className="baseCanvas" />
+				<img ref="baseImage" src={url} className='BaseImage' alt="vegetables2" onLoad={this.onImageLoad.bind(this)}/>
+			</div>)
+		}
 	}
 
 	render() {
 		return (
 			<div>
-				{(this.state.boxImageDatas.length > 0) ? this.renderBoxes() : this.renderPlaceholder()}
+				{(this.state.boxImageDatas.length > 0) ? this.renderBoxes() : this.renderPlaceholder(this.props.imgURL)}
 			</ div>
 		)
 	}

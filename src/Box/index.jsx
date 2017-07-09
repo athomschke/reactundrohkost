@@ -64,6 +64,14 @@ export default class Box extends React.Component {
 		if (imageData === '') return <div />;
 
 		const iconName = ImageMapper(imageData);
-		return <img src={imageUrlForName(iconName)} width={'10px'} height={'10px'}/>
+		return <div
+			className="Box"
+		>
+			<ReactSVG
+				path={imageUrlForName(iconName)}
+				className="example"
+				style={{ width: 50, height: 50 }}
+			/>
+		</ div>
 	}
 }
