@@ -4,7 +4,7 @@ import baseImage from '../react_and_rohkost_assets/images/vegetables2.jpg';
 
 import Box from '../Box';
 
-const BOX_SIZE = 512/4;
+const BOX_SIZE = 512/8;
 
 class ImageGritter extends React.Component {
 	constructor() {
@@ -27,10 +27,10 @@ class ImageGritter extends React.Component {
 		const canvas = this.refs.canvas;
 		const ctx = canvas.getContext('2d');
 		const imageDatas = [];
-		for (let x = 0; x <= canvas.height - BOX_SIZE; x += BOX_SIZE ) {
+		for (let y = 0; y <= canvas.height - BOX_SIZE; y += BOX_SIZE ) {
 			const row = [];
-			for (let y = 0; y <= canvas.width - BOX_SIZE; y += BOX_SIZE ) {
-				const imageData = ctx.getImageData(y,x,512,512);
+			for (let x = 0; x <= canvas.width - BOX_SIZE; x += BOX_SIZE ) {
+				const imageData = ctx.getImageData(x,y,BOX_SIZE,BOX_SIZE);
 				row.push(imageData);
 			}
 			imageDatas.push(row);
@@ -47,23 +47,29 @@ class ImageGritter extends React.Component {
 	}
 
 	renderRow(row) {
-		return row.map((box, x) => {
-			return <Box key={x} data={box}/>
+		return row.map((box, y) => {
+			return <Box key={y} data={box}/>
 		})
 	}
 
 	renderBoxes() {
-		return this.state.boxImageDatas.map((row, y) => {
-			return (<div key={y}>{this.renderRow(row)}</div>)
+		return this.state.boxImageDatas.map((row, x) => {
+			return (<div key={x}>{this.renderRow(row)}</div>)
 		})
+	}
+
+	renderPlaceholder() {
+		return (<div>
+			<canvas ref='canvas' className="baseCanvas" />
+			<img ref="baseImage" src={baseImage} className='BaseImage' alt="vegetables2" onLoad={this.onImageLoad.bind(this)}/>
+		</div>)
 	}
 
 	render() {
 		return (
 			<div>
-				<canvas ref='canvas' className="baseCanvas" />
-				<img ref="baseImage" src={baseImage} className='BaseImage' alt="vegetables2" onLoad={this.onImageLoad.bind(this)}/>
-				<div>{this.renderBoxes()}</div>
+				{this.renderBoxes()}
+				{this.renderPlaceholder()}
 			</ div>
 		)
 	}

@@ -71,7 +71,7 @@ export default class Box extends React.Component {
 				path={imageUrlForName(iconName)}
 				callback={svg => console.log(svg)}
 				className="example"
-				style={{ width: 10 }}
+				style={{ width: 50, height: 50 }}
 			/>
 		</ div>
 	}
