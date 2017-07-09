@@ -1,10 +1,10 @@
 import React from 'react';
 
-import baseImage from '../react_and_rohkost_assets/images/vegetables2.jpg';
+import baseImage from '../react_and_rohkost_assets/images/fruity_heart.jpg';
 
 import Box from '../Box';
 
-const BOX_SIZE = 512/8;
+const BOX_SIZE = 512/16;
 
 class ImageGritter extends React.Component {
 	constructor() {

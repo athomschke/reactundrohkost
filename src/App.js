@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import ImageGritter from './ImageGritter';
 
 import './App.css';
-import apple from './react_and_rohkost_assets/icons/png/apple.png';
+import ImageScale from './ImageScale';
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<ImageScale />
 				<ImageGritter />
 			</ div>
 		);
